@@ -8,7 +8,7 @@ Today in ACI, there are over 100 modules in Ansible for working with ACI which w
 
 For these exercises we'll also need a machine with Ansible
 
-A popular way of running Ansible is through Ansible Tower which provides a frontend, this has a lot of out the box integrations and provides reporting, a GUI and REST API ontop of the Ansible functionality. Organisations looking to operationalise Ansible may use this for the advantages mentioned. However for someone learning we can drive our playbooks from the CLI using the classic Ansible packages.
+A popular way of running Ansible is through Ansible Tower, commercial offering intended for teams looking to operationalise Ansible. Tower provides many features ontop of Ansible including a frontend, RBAC, a lot of out the box integrations and provides reporting, a GUI and a REST API. Organisations looking to operationalise Ansible may use this for the advantages mentioned. However for someone learning we can drive our playbooks from the CLI using the classic Ansible packages.
 
 There are are multiple guides for isntalling Ansible that can be found from the Ansible documentation, it's probably best to start [here](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) for your platform for the most up to date walkthrough.
 
