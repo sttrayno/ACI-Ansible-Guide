@@ -1,0 +1,10 @@
+---
+ ap-1:
+    app_name: AppA
+    description: Test
+    tenant: CustomerA
+
+ ap-2:
+    app_name: AppB
+    description: Test
+    tenant: CustomerB

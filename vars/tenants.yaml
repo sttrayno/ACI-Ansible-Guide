@@ -1,0 +1,20 @@
+---
+ Tenant-1:
+    Tenant_name: CustomerA
+    description: Test
+
+ Tenant-2:
+    Tenant_name: CustomerB
+    description: Test
+
+ Tenant-3:
+    Tenant_name: CustomerC
+    description: Test
+
+ Tenant-4:
+    Tenant_name: CustomerD
+    description: Test
+
+ Tenant-5:
+    Tenant_name: CustomerE
+    description: Test

@@ -1,0 +1,18 @@
+---
+ https:
+    tenant: CustomerA
+    description: Test
+    filter: https
+    entry: https
+    ether_type: ip
+    protocol: tcp
+    port: 443
+
+ sql:
+    tenant: CustomerA
+    description: Test
+    filter: sql
+    entry: sql
+    ether_type: ip
+    protocol: tcp
+    port: 1443

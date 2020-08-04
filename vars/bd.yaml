@@ -1,0 +1,12 @@
+---
+ bd-1:
+    bd_name: CustomerA
+    vrf: vrf-1
+    tenant: CustomerA
+    description: Test
+
+ bd-2:
+    bd_name: CustomerB
+    vrf: vrf-2
+    tenant: CustomerB
+    description: Test

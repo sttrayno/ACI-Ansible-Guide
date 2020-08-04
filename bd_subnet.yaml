@@ -1,0 +1,27 @@
+---
+- name: VERIFY APP PRFILES
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+     - name: include variables for devices
+       include_vars:
+         file: vars/bd_subnet.yaml
+         name: bd_subnet
+
+     - name: ENSURE TENANT SUBNET EXISTS
+       aci_bd_subnet:
+         host: "{{ inventory_hostname }}"
+         username: "{{ username }}"
+         password: "{{ password }}"
+         validate_certs: False
+         state: "present"
+         tenant: "{{ item.value.tenant }}"
+         bd: "{{ item.value.bd }}"
+         gateway: "{{ item.value.gateway }}"
+         mask: "{{ item.value.mask }}"
+         scope: "{{ item.value.scope }}"
+         description: "{{ item.value.description }}"
+       loop: "{{ lookup('dict', bd_subnet) }}"

@@ -1,0 +1,14 @@
+---
+ web:
+    tenant: CustomerA
+    contract: web
+    subject: https
+    description: Test
+    filter: https
+
+ db:
+    tenant: CustomerA
+    contract: db
+    subject: sql
+    description: Test
+    filter: sql

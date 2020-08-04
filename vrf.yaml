@@ -1,0 +1,24 @@
+---
+- name: VERIFY BD EXISTS
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+     - name: include variables for devices
+       include_vars:
+        file: vars/vrf.yaml
+        name: vrf
+
+     - name: ENSURE TENANT VRF EXISTS
+       aci_vrf:
+         host: "{{ inventory_hostname }}"
+         username: "{{ username }}"
+         password: "{{ password }}"
+         state: "present"
+         validate_certs: False
+         tenant: "{{ item.value.tenant }}"
+         vrf: "{{ item.value.vrf_name }}"
+         description: "{{ item.value.description }}"
+       loop: "{{ lookup('dict', vrf) }}"

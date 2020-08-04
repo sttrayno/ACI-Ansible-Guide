@@ -1,0 +1,37 @@
+---
+- name: VERIFY BD EXISTS
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: include variables for devices
+      include_vars:
+        file: vars/contract.yaml
+        name: contract
+
+    - name: ENSURE TENANT CONTRACTS EXIST
+      aci_contract:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ item.value.tenant }}"
+        contract: "{{ item.value.contract }}"
+        scope: "context"
+        description: "Contract Created Using Ansible"
+      loop: "{{ lookup('dict', contract ) }}"
+
+    - name: ENSURE CONTRACTS HAVE CONTRACT SUBJECTS
+      aci_contract_subject:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ item.value.tenant }}"
+        contract: "{{ item.value.contract }}"
+        subject: "{{ item.value.subject }}"
+      loop: "{{ lookup('dict', contract) }}"

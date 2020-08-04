@@ -1,0 +1,10 @@
+---
+ vrf-1:
+    tenant: CustomerA
+    vrf_name: vrf-1
+    description: Test
+
+ vrf-2:
+    tenant: CustomerB
+    vrf_name: vrf-2
+    description: Test

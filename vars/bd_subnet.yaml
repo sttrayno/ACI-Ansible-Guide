@@ -1,0 +1,16 @@
+---
+ bd-subnet-1:
+    bd: CustomerA
+    gateway: "10.1.100.1"
+    mask: 24
+    scope: "private"
+    tenant: CustomerA
+    description: Test
+
+ bd-subnet-2:
+    bd: CustomerB
+    gateway: "10.2.100.1"
+    mask: 24
+    scope: "private"
+    tenant: CustomerB
+    description: Test

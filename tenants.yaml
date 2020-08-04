@@ -1,0 +1,23 @@
+---
+- name: VERIFY TENANTS
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: include variables for devices
+      include_vars:
+        file: vars/tenants.yaml
+        name: tenants
+
+    - name: ENSURE APPLICATIONS TENANT EXISTS
+      aci_tenant:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ item.value.Tenant_name }}"
+        description: "{{ item.value.description }}"
+      loop: "{{ lookup('dict', tenants) }}"
