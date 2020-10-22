@@ -18,4 +18,16 @@ To test Ansible is installed and configured correctly simply run the command `An
 
 To run these exercises you will need an instance of ACI. [dCloud](dcloud.cisco.com) has a couple of instances of ACI that you can reserve and use in this lab. We'll be using the ["Cisco ACI 4.1 Automation v1" demo](https://dcloud2.cisco.com/demo/aci-4-1-automation-v1). Alternatively you can also use your own instance of ACI if you have one available or use the DevNet sandbox. The only drawback of using the sandbox is you cannot get direct API access to the ACI sim and must go through an RDP client to get access, however this does provide an environment with Ansible pre-installed which might work for you.
 
-## Exercise 1
+## Exercise 1 - Running your first playbook
+
+### The inventory file
+
+### The playbooks
+
+### The variables
+
+### Running a playbook
+
+### A few more...
+
+
