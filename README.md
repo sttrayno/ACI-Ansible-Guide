@@ -133,4 +133,11 @@ ansible-playbook playbooks/remove_tenants.yaml -i inventory/host.yaml
 
 ### A few more...
 
+As you go through the playbook directory you'll see more playbooks for specific
+
+
+```bash
+ansible-playbook playbook/<<playbook_file>> -i inventory.host.yaml
+```
+
 
