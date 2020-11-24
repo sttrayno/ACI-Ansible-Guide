@@ -17,7 +17,7 @@
          username: "{{ username }}"
          password: "{{ password }}"
          validate_certs: False
-         state: "present"
+         state: "absent"
          tenant: "{{ item.value.tenant }}"
          bd: "{{ item.value.tenant }}"
          vrf: "{{ item.value.vrf }}"
