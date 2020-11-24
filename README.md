@@ -101,6 +101,8 @@ The second task is then using the aci_tenant module to create the Tenants as per
 ansible-playbook playbooks/tenants.yaml -i inventory/host.yaml 
 ```
 
+![](./images/tenant-create.gif)
+
 ### A few more...
 
 
