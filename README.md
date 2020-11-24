@@ -8,7 +8,7 @@ Today in ACI, there are over 100 modules in Ansible for working with ACI which w
 
 ## Prerequsites
 
-For these exercises we'll first need a machine with Ansible installed.
+For these exercises we'll first need a machine with Ansible installed so that we can run our playbooks.
 
 A popular way of running Ansible is through Ansible Tower, commercial offering intended for teams looking to operationalise Ansible. Tower provides many features ontop of Ansible including a frontend, RBAC, a lot of out the box integrations and provides reporting, a GUI and a REST API. Organisations looking to operationalise Ansible may use this for the advantages mentioned. However for someone learning we can drive our playbooks from the CLI using the classic Ansible packages.
 
@@ -36,7 +36,7 @@ ansible_python_interpreter="/usr/bin/env python"
 10.10.20.14
 ```
 
-If your environment is different you can edit the file to suit your setup. It can be found under `inventory/host.yaml`
+If your environment is different you can edit the file to suit your setup. It can be found under `inventory/host.yaml`. This file is specifically wrote for those using the DevNet sandbox.
 
 ### The playbooks
 
