@@ -40,7 +40,7 @@ If your environment is different you can edit the file to suit your setup. It ca
 
 ### The playbooks
 
-Now lets take a look at our playbooks
+Now lets take a look at our playbooks, in this guide we've taken the approach to separate out our playbooks to create specific resources and features. To start with we'll look at a playbook for creating tenants as tenants are the highest-level object inside the ACI object model therefore all other resources we create will depend on tenants. Once we've created the tenants we'll then go on to create other resources within our ACI environment, for now lets start with tenants. If you look at the tenants.yaml file inside the playbook directory you should see something like this:
 
 ```yaml
 ---
