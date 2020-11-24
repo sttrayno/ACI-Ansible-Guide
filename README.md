@@ -74,6 +74,10 @@ The second task is then using the aci_tenant module to create the Tenants as per
 
 ### The variables
 
+As mentioned in the previous step, a number of yaml files have been included in the `vars` directory which contain a number of dictionaries for each of the different features. When each playbook will run, it will read its corresponding variable file and ensure that the resources outlined have been created within ACI.
+
+See an example variable file for the creation of tenants below:
+
 ```yaml
 ---
  Tenant-1:
@@ -99,11 +103,12 @@ The second task is then using the aci_tenant module to create the Tenants as per
 
 ### Running a playbook
 
-Now all thats left to do is run the playbook, this can be done using the `ansible-playbook` command from the bash prompt.
+Now all thats left to do is run the playbook, this can be done using the `ansible-playbook` command from the bash prompt and specify the playbook you want to run. One thing you must do is specify the inventory file for Ansible to use with the -i argument. Like so:
 
 ```bash
 ansible-playbook playbooks/tenants.yaml -i inventory/host.yaml 
 ```
+You should be able to see the tenants being created in the ACI GUI.
 
 ![](./images/tenant-create.gif)
 
