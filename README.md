@@ -74,6 +74,15 @@ The second task is then using the aci_tenant module to create the Tenants as per
 
 This example is creating the tenants by using the aci_tenants module. We could also look to remove the resources by changing the "state" from "present" to absent. If you look under the playbook directories you will find some examples to also remove resources.
 
+In the playbooks directory you can see other example playbooks using different modules including:
+
+* Contracts
+* VRF
+* Bridge domains
+* Bridge domain subnets
+* Application profiles
+* Filters
+
 ### The variables
 
 As mentioned in the previous step, a number of yaml files have been included in the `vars` directory which contain a number of dictionaries for each of the different features. When each playbook will run, it will read its corresponding variable file and ensure that the resources outlined have been created within ACI.
