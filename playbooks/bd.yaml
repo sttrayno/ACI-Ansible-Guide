@@ -8,7 +8,7 @@
 
      - name: include variables for devices
        include_vars:
-         file: vars/bd.yaml
+         file: ../vars/bd.yaml
          name: bd
 
      - name: ENSURE TENANT BRIDGE DOMAIN EXISTS

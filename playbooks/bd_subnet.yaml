@@ -8,7 +8,7 @@
 
      - name: include variables for devices
        include_vars:
-         file: vars/bd_subnet.yaml
+         file: ../vars/bd_subnet.yaml
          name: bd_subnet
 
      - name: ENSURE TENANT SUBNET EXISTS

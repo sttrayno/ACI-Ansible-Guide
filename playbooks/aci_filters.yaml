@@ -8,7 +8,7 @@
 
      - name: include variables for devices
        include_vars:
-        file: vars/filters.yaml
+        file: ../vars/filters.yaml
         name: filter
 
      - name: ENSURE TENANT FILTERS EXIST

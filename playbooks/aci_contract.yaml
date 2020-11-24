@@ -8,7 +8,7 @@
 
     - name: include variables for devices
       include_vars:
-        file: vars/contract.yaml
+        file: ../vars/contract.yaml
         name: contract
 
     - name: ENSURE TENANT CONTRACTS EXIST

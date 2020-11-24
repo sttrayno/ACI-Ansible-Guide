@@ -8,7 +8,7 @@
 
     - name: include variables for devices
       include_vars:
-        file: vars/tenants.yaml
+        file: ../vars/tenants.yaml
         name: tenants
 
     - name: ENSURE APPLICATIONS TENANT EXISTS
