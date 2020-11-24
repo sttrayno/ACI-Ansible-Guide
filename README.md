@@ -83,6 +83,8 @@ In the playbooks directory you can see other example playbooks using different m
 * Application profiles
 * Filters
 
+As Ansible is [idempodent](https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html), you can run this playbook as many times as required to ensure that the resources specified are still present, however should you remove one of the variables from the vars file it does not  mean it it that the resource would also be removed if the playbook runs again. You would have to put the extra steps in to track these files and run the correct playbook to add or remove variables as required.
+
 ### The variables
 
 As mentioned in the previous step, a number of yaml files have been included in the `vars` directory which contain a number of dictionaries for each of the different features. When each playbook will run, it will read its corresponding variable file and ensure that the resources outlined have been created within ACI.
