@@ -70,7 +70,9 @@ Now lets take a look at our playbooks, in this guide we've taken the approach to
 
 As you can see the first task in the playbook is to load the tenants.yaml file in the vars directory and save it to a variable called "tenants", this variable contains all of our tenant names and a description of each tenant. Our playbook will loop through this dictionary and create each item. This allows you to effectively define what you want your infrastructure to look like in YAML code.
 
-The second task is then using the aci_tenant module to create the Tenants as per the variables file loaded in the first task. With a loop command at the end which will ensure that the correct number of tenants are created.
+The second task is then using the aci_tenant module to create the Tenants as per the variables file loaded in the first task. With a loop command at the end which will ensure that the correct number of tenants are created. 
+
+This example is creating the tenants by using the aci_tenants module. We could also look to remove the resources by changing the "state" from "present" to absent. If you look under the playbook directories you will find some examples to also remove resources.
 
 ### The variables
 
