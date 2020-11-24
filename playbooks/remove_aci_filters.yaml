@@ -28,7 +28,7 @@
          host: "{{ inventory_hostname }}"
          username: "{{ username }}"
          password: "{{ password }}"
-         state: "present"
+         state: "absent"
          validate_certs: False
          tenant: "{{ item.value.tenant }}"
          filter: "{{ item.value.filter }}"
