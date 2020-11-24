@@ -1,4 +1,4 @@
-# ACI Ansible Guide
+# Cisco ACI with Ansible Guide
 
 Ansible is an increasingly popular tool for network automation, it allows engineers to define playbooks which carry out tasks you are looking to automate by interacting with a device or controller through the CLI or API. It is particularly popular in data centre and cloud environments. In this short exercise we're going to show how Ansible can be used with Cisco's data centre networking solution ACI to look at building the beginngings of an Infrastructure as Code solution with Ansible. In Ansible we define playbooks which instructs Ansible in order for the tasks you wish to accomplish, we'll cover more on this in a bit.
 
@@ -24,7 +24,7 @@ To run these exercises you will need an instance of ACI. [dCloud](dcloud.cisco.c
 
 ### The inventory file
 
-Most of the time when working with Ansible, you will need an inventory file in order that Ansible knows the APIC it is going to manage. In this lab we have a sample inventory file for the DevNet ACI 4.2 sandbox which we will be using. You can see how it is laid out below.
+Most of the time when working with Ansible, you will need an inventory file in order that Ansible knows the APIC it is going to manage. In this lab we have a sample inventory file for the DevNet ACI 4.2 sandbox which we will be using. You can see how it is laid out below. Notice that we're defining a group of hosts called apic which will be referred to in our playbooks later. We also define some variables such as the username and password we'll use to login to the APIC controller.
 
 ```yaml
 [apic:vars]
