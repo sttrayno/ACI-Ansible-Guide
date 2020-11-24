@@ -40,9 +40,62 @@ If your environment is different you can edit the file to suit your setup. It ca
 
 ### The playbooks
 
+```yaml
+---
+- name: VERIFY TENANTS
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: include variables for devices
+      include_vars:
+        file: ../vars/tenants.yaml
+        name: tenants
+
+    - name: ENSURE APPLICATIONS TENANT EXISTS
+      aci_tenant:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ item.value.Tenant_name }}"
+        description: "{{ item.value.description }}"
+      loop: "{{ lookup('dict', tenants) }}"
+```
+
 ### The variables
 
+```yaml
+---
+ Tenant-1:
+    Tenant_name: CustomerA
+    description: Test
+
+ Tenant-2:
+    Tenant_name: CustomerB
+    description: Test
+
+ Tenant-3:
+    Tenant_name: CustomerC
+    description: Test
+
+ Tenant-4:
+    Tenant_name: CustomerD
+    description: Test
+
+ Tenant-5:
+    Tenant_name: CustomerE
+    description: Test
+```
+
 ### Running a playbook
+
+```bash
+ansible-playbook playbooks/tenants.yaml -i inventory/host.yaml 
+```
 
 ### A few more...
 
