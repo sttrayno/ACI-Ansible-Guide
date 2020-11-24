@@ -139,6 +139,10 @@ As you go through the playbook directory you'll see more playbooks for specific 
 ansible-playbook playbook/<<playbook_file>> -i inventory.host.yaml
 ```
 
+See the animation below for an example of running the playbook to create VRF's under the tenants
+
+![](./images/create-vrf.gif)
+
 One thing to remember when your working with ACI is the ACI object model which can be seen below. As we mentioned earlier, Tenants are the highest level object within ACI. As you can see the rest of the resources, if you get an error trying to run a playbook you might find that your trying to create a resource which relys on another higher level resource. For example you cannot create an AppProfile if you don't have the Tenant created which it belongs to.
 
 ![](https://www.cisco.com/c/dam/en/us/td/i/500001-600000/500001-510000/501001-502000/501797.jpg)
