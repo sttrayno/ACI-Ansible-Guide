@@ -20,5 +20,5 @@
         validate_certs: False
         tenant: "{{ item.value.tenant }}"
         description: "{{ item.value.description }}"
-        state: present
+        state: absent
       loop: "{{ lookup('dict', ap) }}"
