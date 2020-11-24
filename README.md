@@ -133,11 +133,13 @@ ansible-playbook playbooks/remove_tenants.yaml -i inventory/host.yaml
 
 ### A few more...
 
-As you go through the playbook directory you'll see more playbooks for specific
-
+As you go through the playbook directory you'll see more playbooks for specific features and resources within ACI. You can run these playbooks by using the same command from above and passing in
 
 ```bash
 ansible-playbook playbook/<<playbook_file>> -i inventory.host.yaml
 ```
 
+One thing to remember when your working with ACI is the ACI object model which can be seen below
+
+![](https://acitoolkit.readthedocs.io/en/latest/_images/graphviz-02657fb5315e45dafddcfd33c3bc8177293b78e2.png)
 
