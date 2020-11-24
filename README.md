@@ -123,6 +123,12 @@ You should be able to see the tenants being created in the ACI GUI.
 
 ![](./images/tenant-create.gif)
 
+We could also remove it by using the command below, which uses the same playbook with the state set to 'absent' to remove the resources from ACI
+
+```bash
+ansible-playbook playbooks/remove_tenants.yaml -i inventory/host.yaml 
+```
+
 ### A few more...
 
 
