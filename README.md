@@ -133,13 +133,13 @@ ansible-playbook playbooks/remove_tenants.yaml -i inventory/host.yaml
 
 ### A few more...
 
-As you go through the playbook directory you'll see more playbooks for specific features and resources within ACI. You can run these playbooks by using the same command from above and passing in
+As you go through the playbook directory you'll see more playbooks for specific features and resources within ACI. You can run these playbooks by using the same command from above and passing in the filename of the playbook you wish to run.
 
 ```bash
 ansible-playbook playbook/<<playbook_file>> -i inventory.host.yaml
 ```
 
-One thing to remember when your working with ACI is the ACI object model which can be seen below
+One thing to remember when your working with ACI is the ACI object model which can be seen below. As we mentioned earlier, Tenants are the highest level object within ACI. As you can see the rest of the resources, if you get an error trying to run a playbook you might find that your trying to create a resource which relys on another higher level resource. For example you cannot create a VRF if you don't have the Tenant created which it belongs to.
 
 ![](https://acitoolkit.readthedocs.io/en/latest/_images/graphviz-02657fb5315e45dafddcfd33c3bc8177293b78e2.png)
 
