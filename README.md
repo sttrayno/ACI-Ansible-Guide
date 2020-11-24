@@ -129,7 +129,7 @@ We could also remove it by using the command below, which uses the same playbook
 ansible-playbook playbooks/remove_tenants.yaml -i inventory/host.yaml 
 ```
 
-![](./images/remove-tenant.gif)
+![](./images/remove-tenants.gif)
 
 ### A few more...
 
