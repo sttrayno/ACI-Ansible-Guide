@@ -66,6 +66,10 @@ If your environment is different you can edit the file to suit your setup. It ca
       loop: "{{ lookup('dict', tenants) }}"
 ```
 
+As you can see the first task in the playbook is to load the tenants.yaml file in the vars directory and save it to a variable called "tenants", this variable contains all of our tenant names and a description of each tenant. Our playbook will loop through this dictionary and create each item. This allows you to effectively define what you want your infrastructure to look like in YAML code.
+
+The second task is then using the aci_tenant module to create the Tenants as per the variables file loaded in the first task. With a loop command at the end which will ensure that the correct number of tenants are created.
+
 ### The variables
 
 ```yaml
