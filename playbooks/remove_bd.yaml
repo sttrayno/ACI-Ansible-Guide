@@ -1,0 +1,25 @@
+---
+- name: VERIFY APP PRFILES
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+     - name: include variables for devices
+       include_vars:
+         file: ../vars/bd.yaml
+         name: bd
+
+     - name: ENSURE TENANT BRIDGE DOMAIN EXISTS
+       aci_bd:
+         host: "{{ inventory_hostname }}"
+         username: "{{ username }}"
+         password: "{{ password }}"
+         validate_certs: False
+         state: "present"
+         tenant: "{{ item.value.tenant }}"
+         bd: "{{ item.value.tenant }}"
+         vrf: "{{ item.value.vrf }}"
+         description: "{{ item.value.description }}"
+       loop: "{{ lookup('dict', bd) }}"

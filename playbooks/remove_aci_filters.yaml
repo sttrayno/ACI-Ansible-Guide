@@ -1,0 +1,40 @@
+---
+- name: VERIFY BD EXISTS
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+     - name: include variables for devices
+       include_vars:
+        file: ../vars/filters.yaml
+        name: filter
+
+     - name: ENSURE TENANT FILTERS EXIST
+       aci_filter:
+         host: "{{ inventory_hostname }}"
+         username: "{{ username }}"
+         password: "{{ password }}"
+         validate_certs: False
+         tenant: "{{ item.value.tenant }}"
+         filter: "{{ item.value.filter }}"
+         descr: "Filter Created Using Ansible"
+       loop: "{{ lookup('dict', filter) }}"
+
+
+     - name: ENSURE FILTERS HAVE FILTER ENTRIES
+       aci_filter_entry:
+         host: "{{ inventory_hostname }}"
+         username: "{{ username }}"
+         password: "{{ password }}"
+         state: "present"
+         validate_certs: False
+         tenant: "{{ item.value.tenant }}"
+         filter: "{{ item.value.filter }}"
+         entry: "{{ item.value.entry }}"
+         ether_type: "{{ item.value.ether_type }}"
+         ip_protocol: "{{ item.value.protocol }}"
+         dst_port_start: "{{ item.value.port }}"
+         dst_port_end: "{{ item.value.port }}"
+       loop: "{{ lookup('dict', filter) }}"

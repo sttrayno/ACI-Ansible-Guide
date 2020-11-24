@@ -1,0 +1,24 @@
+---
+- name: VERIFY APP PRFILES
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: include variables for devices
+      include_vars:
+        file: ../vars/ap.yaml
+        name: ap
+
+    - name: ENSURE APPS EXIST
+      aci_ap:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        ap: "{{ item.value.app_name }}"
+        validate_certs: False
+        tenant: "{{ item.value.tenant }}"
+        description: "{{ item.value.description }}"
+        state: present
+      loop: "{{ lookup('dict', ap) }}"
