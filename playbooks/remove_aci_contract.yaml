@@ -16,11 +16,11 @@
         host: "{{ inventory_hostname }}"
         username: "{{ username }}"
         password: "{{ password }}"
-        state: "present"
+        state: ""
         validate_certs: False
         tenant: "{{ item.value.tenant }}"
         contract: "{{ item.value.contract }}"
-        scope: "context"
+        scope: "absent"
         description: "Contract Created Using Ansible"
       loop: "{{ lookup('dict', contract ) }}"
 
@@ -29,7 +29,7 @@
         host: "{{ inventory_hostname }}"
         username: "{{ username }}"
         password: "{{ password }}"
-        state: "present"
+        state: "absent"
         validate_certs: False
         tenant: "{{ item.value.tenant }}"
         contract: "{{ item.value.contract }}"
