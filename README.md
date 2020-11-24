@@ -40,6 +40,8 @@ If your environment is different you can edit the file to suit your setup. It ca
 
 ### The playbooks
 
+Now lets take a look at our playbooks
+
 ```yaml
 ---
 - name: VERIFY TENANTS
