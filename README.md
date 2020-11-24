@@ -99,6 +99,8 @@ The second task is then using the aci_tenant module to create the Tenants as per
 
 ### Running a playbook
 
+Now all thats left to do is run the playbook, this can be done using the `ansible-playbook` command from the bash prompt.
+
 ```bash
 ansible-playbook playbooks/tenants.yaml -i inventory/host.yaml 
 ```
